@@ -3,10 +3,10 @@
 #include <linux/kernel.h>
 
 static int __init hello_init(void)
- {
+{
     printk(KERN_EMERG "[ KERN_EMERG ]  Hello  Module Init\n");
-    printk( "[ default ]  Hello  Module Init\n");
- return 0;
+    printk("[ default ]  Hello  Module Init\n");
+    return 0;
 }
 
 static void __exit hello_exit(void)
