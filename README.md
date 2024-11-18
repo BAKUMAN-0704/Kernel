@@ -12,5 +12,5 @@ echo 500000 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
 echo "normal" > /sys/class/pwm/pwmchip0/pwm0/polarity
 echo 1 > /sys/class/pwm/pwmchip0/pwm0/enable
 ```
-
+在linux上写驱动程序，都是做“填空题”。
 

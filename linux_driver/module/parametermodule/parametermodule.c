@@ -2,46 +2,46 @@
 #include <linux/init.h>
 #include <linux/kernel.h>
 
-static int itype=0;
-module_param(itype,int,0);
+static int itype = 0;
+module_param(itype, int, 0);
 
-static bool btype=0;
-module_param(btype,bool,0644);
+static bool btype = 0;
+module_param(btype, bool, 0644);
 
-static char ctype=0;
-module_param(ctype,byte,0);
+static char ctype = 0;
+module_param(ctype, byte, 0);
 
-static char  *stype=0;
-module_param(stype,charp,0644);
+static char *stype = 0;
+module_param(stype, charp, 0644);
 
 static int __init param_init(void)
- {
- printk(KERN_ALERT "param init!\n");
- printk(KERN_ALERT "itype=%d\n",itype);
- printk(KERN_ALERT "btype=%d\n",btype);
- printk(KERN_ALERT "ctype=%d\n",ctype);
- printk(KERN_ALERT "stype=%s\n",stype);
- return 0;
+{
+   printk(KERN_ALERT "param init!\n");
+   printk(KERN_ALERT "itype=%d\n", itype);
+   printk(KERN_ALERT "btype=%d\n", btype);
+   printk(KERN_ALERT "ctype=%d\n", ctype);
+   printk(KERN_ALERT "stype=%s\n", stype);
+   return 0;
 }
 
 static void __exit param_exit(void)
 {
- printk(KERN_ALERT "module exit!\n");
+   printk(KERN_ALERT "module exit!\n");
 }
 
-EXPORT_SYMBOL(itype);
+EXPORT_SYMBOL(itype); // 向内核导出符号
 
- int my_add(int a, int b)
-  {
-    return a+b;
- }
+int my_add(int a, int b)
+{
+   return a + b;
+}
 
 EXPORT_SYMBOL(my_add);
 
 int my_sub(int a, int b)
- {
-    return a-b;
- }
+{
+   return a - b;
+}
 
 EXPORT_SYMBOL(my_sub);
 
